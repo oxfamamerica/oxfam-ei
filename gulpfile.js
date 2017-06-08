@@ -1,27 +1,47 @@
-// Requires
-const gulp = require('gulp');
-const $ = require('gulp-load-plugins')();
-const del = require('del');
-const runSequence = require('run-sequence');
-const browserSync = require('browser-sync');
+'use strict';
 
-const reload = browserSync.reload;
+// Requires
+var gulp = require('gulp'),
+    $ = require('gulp-load-plugins')(),
+    del = require('del'),
+    runSequence = require('run-sequence'),
+    browserSync = require('browser-sync'),
+    beep = require('beepbeep'),
+    reload = browserSync.reload;
+
+
+
+// Lint JavaScript
+// gulp.task('lint', function () {
+//   return gulp.src([
+//     'app/js/**/*.js',
+//     '!app/js/queue.v1.min.js'
+//     ])
+//     .pipe(reload({stream: true, once: true}))
+//     .pipe($.jshint())
+//     .pipe($.jshint.reporter('jshint-stylish'));
+// });
+
 
 // Optimize images
-gulp.task('images', () => {
+gulp.task('images', function() {
   gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
+    .pipe($.imagemin({
       progressive: true,
       interlaced: true,
-    })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe($.size({ title: 'images' }));
+      svgoPlugins: [
+          {removeViewBox: false},
+          {cleanupIDs: false}
+      ],
+    }))
+    .pipe(gulp.dest('dist/images'));
 });
 
 
 // Compile and automatically prefix stylesheets
-gulp.task('styles', () => {
-  const AUTOPREFIXER_BROWSERS = [
+gulp.task('styles', function () {
+
+  var AUTOPREFIXER_BROWSERS = [
     'ie >= 10',
     'ie_mob >= 10',
     'ff >= 30',
@@ -30,97 +50,112 @@ gulp.task('styles', () => {
     'opera >= 23',
     'ios >= 7',
     'android >= 4.4',
-    'bb >= 10',
+    'bb >= 10'
   ];
 
   return gulp.src([
-    'app/styles/**/*.sass',
-    'app/styles/**/*.scss',
-    'app/styles/**/*.css',
+    'app/sass/**/*.sass',
+    'app/sass/**/*.scss',
+    'app/sass/**/*.css'
   ])
-    .pipe($.newer('.tmp/styles'))
+    .pipe($.newer('.tmp/css'))
     .pipe($.sourcemaps.init())
+    .pipe($.plumber(function() {
+      beep();
+    }))
     .pipe($.sass({
-      precision: 10,
+      precision: 10
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('.tmp/styles'));
-    // Concatenate and minify styles
-    // .pipe($.if('*.css', $.cssnano()))
-    // .pipe($.size({title: 'styles'}))
-    // .pipe($.sourcemaps.write('./'))
-    // .pipe(gulp.dest('dist/styles'));
+    .pipe(gulp.dest('.tmp/css'));
 });
 
 
 // Scan the HTML for assets and optimize them
-gulp.task('html', () => gulp.src('app/**/*.html')
-    .pipe($.useref({ searchPath: '{.tmp,app}' }))
-
-    // Concatenate and minify styles and scripts
-    // !!! Requires styles and scripts to be inside useref build blocks !!!
+gulp.task('html', function() {
+  return gulp.src(['app/*.html', '.tmp/*.html'])
+    .pipe($.useref({searchPath: ['.tmp', 'app']}))
     .pipe($.if('*.css', $.cssnano()))
-    .pipe($.if('*.js', $.uglify({ preserveComments: 'some' })))
-
-    // Minify any HTML
-    .pipe($.if('*.html', $.htmlmin()))
-    // Output files
-    .pipe($.if('*.html', $.size({ title: 'html', showFiles: true })))
-    .pipe(gulp.dest('dist')));
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.html', $.htmlmin({
+      collapseWhitespace: true,
+      removeEmptyAttributes: true,
+      preserveLineBreaks: false
+    })))
+    .pipe(gulp.dest('dist'));
+});
 
 // Clean output directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], { dot: true }));
+gulp.task('clean', function() {
+  return del.bind(null, ['.tmp/*', 'dist/*', '!dist/.git'], {dot: true});
+});
 
 
 // Copy all files at the root level (app)
-gulp.task('copy', () => gulp.src([
-  'app/*',
-  '!app/*.html',
-  'node_modules/apache-server-configs/dist/.htaccess',
-], {
-  dot: true,
-}).pipe(gulp.dest('dist'))
-    .pipe($.size({ title: 'copy' })));
+gulp.task('copy', function () {
+  return gulp.src([
+    'app/*',
+    '!app/sass',
+    '!app/bower_components',
+    '!app/jade',
+    '!app/*.jade',
+    '!app/*.html',
+    'node_modules/apache-server-configs/dist/.htaccess'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist'));
+});
 
 
 // Copy web fonts to dist
-gulp.task('fonts', () => gulp.src(['app/fonts/**'])
-    .pipe(gulp.dest('dist/fonts'))
-    .pipe($.size({ title: 'fonts' })));
+gulp.task('fonts', function () {
+  return gulp.src(['app/fonts/**'])
+    .pipe(gulp.dest('dist/fonts'));
+});
 
-// Copy json to dist
-gulp.task('json', () => gulp.src(['app/json/**'])
-    .pipe(gulp.dest('dist/json'))
-    .pipe($.size({ title: 'json' })));
 
-// Copy data to dist
-gulp.task('data', () => gulp.src(['app/data/**'])
-    .pipe(gulp.dest('dist/data'))
-    .pipe($.size({ title: 'data' })));
+//Copy json to dist
+gulp.task('data', function() {
+  return gulp.src(['app/data/**'])
+    .pipe(gulp.dest('dist/data'));
+});
+
+
+
+//Copy static to dist
+gulp.task('static', function() {
+  return gulp.src(['app/static/**'])
+    .pipe(gulp.dest('dist/static'));
+});
+
+
+//Copy bower to dist
+gulp.task('bower', function() {
+  return gulp.src(['app/bower_components/**'])
+    .pipe(gulp.dest('dist/bower_components'));
+});
+
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles'], () => {
+gulp.task('serve', ['clean'], function() {
+  runSequence('styles');
   browserSync({
     notify: false,
-    // Customize the BrowserSync console logging prefix
     logPrefix: 'WSK',
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: ['.tmp', 'app'],
+    server: ['.tmp', 'app']
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{sass,scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js']);
+  gulp.watch(['app/sass/**/*.{sass,scss,css}'], ['styles', reload]);
+  gulp.watch(['app/js/**/*.js'], reload);
   gulp.watch(['app/images/**/*'], reload);
 });
 
 
+
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], () => {
+gulp.task('serve:dist', ['default'], function () {
   browserSync({
     notify: false,
     logPrefix: 'WSK',
@@ -128,12 +163,13 @@ gulp.task('serve:dist', ['default'], () => {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'dist',
+    server: 'dist'
   });
 });
 
 
+
 // Default task - Build production files
-gulp.task('default', ['clean'], (cb) => {
-  runSequence('styles', ['html', 'images', 'fonts', 'json', 'data', 'copy'], cb);
+gulp.task('default', ['clean'], function (cb) {
+  runSequence('styles', ['html', 'images', 'fonts', 'data', 'static', 'bower'], cb);
 });
