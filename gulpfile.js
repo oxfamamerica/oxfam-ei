@@ -54,9 +54,9 @@ gulp.task('styles', function () {
   ];
 
   return gulp.src([
-    'app/sass/**/*.sass',
-    'app/sass/**/*.scss',
-    'app/sass/**/*.css'
+    'app/styles/**/*.sass',
+    'app/styles/**/*.scss',
+    'app/styles/**/*.css'
   ])
     .pipe($.newer('.tmp/css'))
     .pipe($.sourcemaps.init())
@@ -68,7 +68,7 @@ gulp.task('styles', function () {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('.tmp/css'));
+    .pipe(gulp.dest('.tmp/styles'));
 });
 
 
@@ -88,23 +88,7 @@ gulp.task('html', function() {
 
 // Clean output directory
 gulp.task('clean', function() {
-  return del.bind(null, ['.tmp/*', 'dist/*', '!dist/.git'], {dot: true});
-});
-
-
-// Copy all files at the root level (app)
-gulp.task('copy', function () {
-  return gulp.src([
-    'app/*',
-    '!app/sass',
-    '!app/bower_components',
-    '!app/jade',
-    '!app/*.jade',
-    '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'));
+  return del(['.tmp/*', 'dist/*']);
 });
 
 
@@ -115,13 +99,17 @@ gulp.task('fonts', function () {
 });
 
 
-//Copy json to dist
+//Copy data to dist
 gulp.task('data', function() {
   return gulp.src(['app/data/**'])
     .pipe(gulp.dest('dist/data'));
 });
 
-
+//Copy json to dist
+gulp.task('json', function() {
+  return gulp.src(['app/json/**'])
+    .pipe(gulp.dest('dist/json'));
+});
 
 //Copy static to dist
 gulp.task('static', function() {
@@ -170,6 +158,6 @@ gulp.task('serve:dist', ['default'], function () {
 
 
 // Default task - Build production files
-gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['html', 'images', 'fonts', 'data', 'static', 'bower'], cb);
+gulp.task('default', function (cb) {
+  runSequence('clean', 'styles', ['images', 'fonts', 'data', 'json', 'static', 'bower', 'html'], cb);
 });
