@@ -1,0 +1,63 @@
+#interactive {
+	.country-wrapper {
+		@include clearfix;
+		@include transition(all $animation-speed ease-in-out);
+		@include transform(translate(0, 0));
+		position: relative;
+		width: 100%;
+
+		.country-narrative {
+			max-width: 70%;
+			float: left;
+
+			p:last-of-type {
+				margin-bottom: 2em;
+			}
+		}
+
+		.country-sidebar {
+			max-width: 25%;
+			float: right;
+
+			.sidebar-block {
+				width: 100%;
+			}
+		}
+
+		&.offscreen {
+			display: block;
+			@include transform(translate(110%, 0));
+		}
+	}
+}
+
+
+
+
+
+@media only screen and (max-width: 1023px) {
+	
+	#interactive .country-wrapper {
+		.country-sidebar {
+			max-width: 27%;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 699px) {
+	#interactive .country-wrapper {
+		position: relative;
+		.country-narrative {
+			max-width: 100%;
+			width: 100%;
+			float: none;
+		}
+
+		.country-sidebar {
+			max-width: 100%;
+			width: 100%;
+			float: none;	
+		}
+	}	
+}

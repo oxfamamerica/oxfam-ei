@@ -1,0 +1,14 @@
+#interactive {
+	.change-data-btn {
+		display: inline-block;
+		padding: 3px 10px;
+		background: #fff;
+		font-size: 12px;
+		font-weight: bold;
+
+		&.active {
+			background: $ox-green;
+			color: white;
+		}
+	}
+}

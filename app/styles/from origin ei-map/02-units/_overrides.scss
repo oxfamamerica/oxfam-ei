@@ -1,0 +1,58 @@
+
+
+#interactive {
+	position: relative;
+
+	h1 {
+		color: $ox-green;
+		line-height: 1.2;
+		margin-bottom: 0.3em;
+	}
+
+	p {
+		font-size: 16px;
+		font-size: 1.6rem;
+		line-height: 1.6;
+		font-weight: normal;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	div.cmpnt-full-article-share {
+		margin: 0;
+		width: 100%;
+		padding: 0 1px;
+		background: #fff;
+
+		.sharrre {
+			width: 32%;
+			margin-right: 2%;
+
+			a {
+				width: 100%;
+			}
+
+			.share:before {
+				left: 10%;
+			}
+
+			.count {
+
+			}
+		}
+
+		#googleplus.sharrre {
+			margin-right: 0;
+		}
+
+		.sharrre .count {
+			border: 1px solid #ddd;
+
+			&:before {
+				border-top-color: #ddd;
+			}
+		}
+	}
+}

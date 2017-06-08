@@ -1,0 +1,39 @@
+svg#map text {
+  fill: #333;
+}
+
+svg#map {
+	fill: none;
+	z-index: 0;
+	overflow: hidden;
+
+	.land {
+		fill: tint($ox-green, 45%);
+	}
+
+	.country {
+		fill: tint($dark-green, 5%);
+		stroke: tint($ox-green, 70%);
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		cursor: pointer;
+
+		&.noshow {
+			display: none;
+			pointer-events: none;
+		}
+	}
+
+	.hover {
+		fill: shade($dark-green, 15%);
+	}
+
+	.active,
+	.active-color {
+		fill: lighten($blue, 8%);
+	}
+
+	.pin {
+		pointer-events: none;
+	}
+}

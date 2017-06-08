@@ -1,0 +1,69 @@
+.head-nav-btn {
+	display: block;
+	font-size: 13px;
+	padding: 5px;
+	line-height: 1;
+
+	&:before {
+		@include size(0 0);
+		content: "";
+		border: solid transparent;
+		border-width: 6px;
+		margin-top: -6px;
+	}
+
+	&.previous-country-btn {
+		@include position(absolute, 24px null null 5px);
+		padding-left: 22px;
+
+		&:before {
+			@include position(absolute, 50% null null 2px);
+			border-right-color: $ox-green;
+		}
+	}
+
+	&.list-view-btn {
+		@include position(absolute, 24px null null 5px);
+		padding-left: 30px;
+
+		&:before {
+			@include position(absolute, 0 null null 0);
+			font: 22px 'oa-icons';
+			content: '\E005';
+			display: inline-block;
+		}
+	}
+
+	&.next-country-btn {
+		@include position(absolute, 24px 5px null null);
+		padding-right: 24px;
+
+		&:before {
+			@include position(absolute, 50% 4px null null);
+			border-left-color: $ox-green;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 699px) {
+	.head-nav-btn {
+		&.next-country-btn {
+			display: none;
+		}
+
+		&.list-view-btn {
+			display: inline-block;
+			@include position(absolute, 20px 0 auto auto);
+			padding-left: 30px;
+
+
+			// &:before {
+			// 	@include position(absolute, 0 null null 0);
+			// 	font: 22px 'oa-icons';
+			// 	content: '\E005';
+			// 	display: inline;
+			// }
+		}
+	}
+}

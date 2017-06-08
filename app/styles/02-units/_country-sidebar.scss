@@ -1,0 +1,60 @@
+#interactive {
+	.sidebar-block {
+		background: $beige;
+		margin-bottom: 20px;
+		font-size: 13px;
+		line-height: 1.4;
+
+
+		h4 {
+			background: $blue;
+			margin: 0;
+			padding: 5px 10px;
+			color: #fff;
+			font-size: 14px;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				padding: 10px;
+				list-style: none;
+				border-bottom: solid 1px darken($beige, 10%);
+
+				a {
+					color: $ox-green-compliant;
+				}
+
+				&:last-of-type {
+					margin-bottom: 0;
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.sidebar-block.checkboxes {
+		li {
+			padding-left: 38px;
+			position: relative;
+
+			&:before {
+				content: '';
+				@include size(16px 16px);
+				@include position(absolute, 10px null null 10px);
+				border: solid 1px #bbb;
+				border-radius: 50%;
+			}
+		}
+
+		li.isChecked:before {
+			background-color: $ox-green;
+			background-image: url('../images/icon-check.png');
+			background-size: 16px 16px;
+			background-repeat: no-repeat;
+			border: solid 1px #999;
+		}
+	}
+}
