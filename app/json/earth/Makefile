@@ -1,5 +1,5 @@
 countries.geojson:
-	ogr2ogr -f GeoJSON -where "ADM0_A3 IN ('AUS', 'BOL', 'BRA', 'BFA', 'KHM', 'COL', 'DOM', 'SLV', 'GHA', 'GTM', 'HTI', 'HND', 'IDN', 'KEN', 'LAO', 'MWI', 'MLI', 'MEX', 'MOZ', 'NER', 'PNG', 'PER', 'SEN', 'ZAF', 'SDS', 'TZA', 'UGA', 'USA', 'VNM', 'ZMB', 'ZWE', 'COD', 'IND', 'NGA', 'LBR', 'ETH', 'CAN', 'FRA', 'GBR', 'NLD', 'ESP', 'NIC', 'MMR', 'SLE', 'TLS', 'DNK', 'FJI')" countries.geojson ne_110m_admin_0_countries.shp
+	ogr2ogr -f GeoJSON -where "ADM0_A3 IN ('AUS', 'BOL', 'BRA', 'BFA', 'KHM', 'COL', 'DOM', 'SLV', 'GHA', 'GTM', 'HTI', 'HND', 'IDN', 'KEN', 'LAO', 'MWI', 'MLI', 'MEX', 'MOZ', 'NER', 'PNG', 'PER', 'SEN', 'ZAF', 'SDS', 'TZA', 'UGA', 'USA', 'VNM', 'ZMB', 'ZWE', 'COD', 'IND', 'NGA', 'LBR', 'ETH', 'CAN', 'FRA', 'GBR', 'NLD', 'ESP', 'NIC', 'MMR', 'SLE', 'TLS', 'DNK', 'FJI', 'MRT')" countries.geojson ne_110m_admin_0_countries.shp
 
 land.geojson:
 	ogr2ogr -f GeoJSON land.geojson ne_110m_land.shp

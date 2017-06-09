@@ -62,6 +62,7 @@ ZWE - Zimbabwe
 
 Recently added:
 NIC - Nicaragua
+MRT - Mauritania
 MMR - Myanmar/Burma
 SLE - Sierra Leone
 TLS - Timor Leste
