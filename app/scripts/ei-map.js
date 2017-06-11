@@ -51,10 +51,6 @@ $(document).ready(function() {
       partner4ById = {},
       partner5ById = {},
       partner6ById = {},
-      partner7ById = {},
-      partner8ById = {},
-      partner9ById = {},
-      partner10ById = {},
       donor1ById = {},
       donor2ById = {},
       donor3ById = {},
@@ -66,6 +62,10 @@ $(document).ready(function() {
       learnMore4ById = {},
       learnMore5ById = {},
       learnMore6ById = {},
+      learnMore7ById = {},
+      learnMore8ById = {},
+      learnMore9ById = {},
+      learnMore10ById = {},
       contact1ById = {},
       contact2ById = {},
       customTitleById = {},
@@ -159,10 +159,6 @@ $(document).ready(function() {
     $.each(mapData, function(i, d) { partner4ById[d.id] = d.partner4; });
     $.each(mapData, function(i, d) { partner5ById[d.id] = d.partner5; });
     $.each(mapData, function(i, d) { partner6ById[d.id] = d.partner6; });
-    $.each(mapData, function(i, d) { partner7ById[d.id] = d.partner7; });
-    $.each(mapData, function(i, d) { partner8ById[d.id] = d.partner8; });
-    $.each(mapData, function(i, d) { partner9ById[d.id] = d.partner9; });
-    $.each(mapData, function(i, d) { partner10ById[d.id] = d.partner10; });
     $.each(mapData, function(i, d) { donor1ById[d.id] = d.donor1; });
     $.each(mapData, function(i, d) { donor2ById[d.id] = d.donor2; });
     $.each(mapData, function(i, d) { donor3ById[d.id] = d.donor3; });
@@ -174,6 +170,10 @@ $(document).ready(function() {
     $.each(mapData, function(i, d) { learnMore4ById[d.id] = d.learnMore4; });
     $.each(mapData, function(i, d) { learnMore5ById[d.id] = d.learnMore5; });
     $.each(mapData, function(i, d) { learnMore6ById[d.id] = d.learnMore6; });
+    $.each(mapData, function(i, d) { learnMore7ById[d.id] = d.learnMore7; });
+    $.each(mapData, function(i, d) { learnMore8ById[d.id] = d.learnMore8; });
+    $.each(mapData, function(i, d) { learnMore9ById[d.id] = d.learnMore9; });
+    $.each(mapData, function(i, d) { learnMore10ById[d.id] = d.learnMore10; });
     $.each(mapData, function(i, d) { contact1ById[d.id] = d.contact1; });
     $.each(mapData, function(i, d) { contact2ById[d.id] = d.contact2; });
     $.each(mapData, function(i, d) { customTitleById[d.id] = d.customTitle; });
@@ -596,53 +596,25 @@ $(document).ready(function() {
           .append('li')
           .html(partner2ById[id]);
       }
-
       if ( partner3ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner3ById[id]);
+        d3.select('.sidebar-block-wrapper > .partners > ul')
+          .append('li')
+          .html(partner3ById[id]);
       }
-
       if ( partner4ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner4ById[id]);
+        d3.select('.sidebar-block-wrapper > .partners > ul')
+          .append('li')
+          .html(partner4ById[id]);
       }
-
       if ( partner5ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner5ById[id]);
+        d3.select('.sidebar-block-wrapper > .partners > ul')
+          .append('li')
+          .html(partner5ById[id]);
       }
-
       if ( partner6ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner6ById[id]);
-      }
-
-      if ( partner7ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner7ById[id]);
-      }
-
-      if ( partner8ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner8ById[id]);
-      }
-
-      if ( partner9ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner9ById[id]);
-      }
-
-      if ( partner10ById[id] !== "" ) {
-          d3.select('.sidebar-block-wrapper > .partners > ul')
-              .append('li')
-              .html(partner10ById[id]);
+        d3.select('.sidebar-block-wrapper > .partners > ul')
+          .append('li')
+          .html(partner6ById[id]);
       }
     }
 
@@ -680,40 +652,55 @@ $(document).ready(function() {
 
     // ADD LEARN MORE
     if ( learnMore1ById[id] !== "" ) {
-        d3.select('.sidebar-block-wrapper').append('div')
-            .classed('sidebar-block', true)
-            .classed('learn-more', true)
-            .html('<h4>Learn more</h4><ul><li>' + learnMore1ById[id] + '</li></ul>');
-
-        if ( learnMore2ById[id] !== "" ) {
-            d3.select('.sidebar-block-wrapper > .learn-more > ul')
-                .append('li')
-                .html(learnMore2ById[id]);
-        }
-
-        if ( learnMore3ById[id] !== "" ) {
-            d3.select('.sidebar-block-wrapper > .learn-more > ul')
-                .append('li')
-                .html(learnMore3ById[id]);
-        }
-
-        if ( learnMore4ById[id] !== "" ) {
-            d3.select('.sidebar-block-wrapper > .learn-more > ul')
-                .append('li')
-                .html(learnMore4ById[id]);
-        }
-
-        if ( learnMore5ById[id] !== "" ) {
-            d3.select('.sidebar-block-wrapper > .learn-more > ul')
-                .append('li')
-                .html(learnMore5ById[id]);
-        }
-
-        if ( learnMore6ById[id] !== "" ) {
-            d3.select('.sidebar-block-wrapper > .learn-more > ul')
-                .append('li')
-                .html(learnMore6ById[id]);
-        }
+      d3.select('.sidebar-block-wrapper').append('div')
+        .classed('sidebar-block', true)
+        .classed('learn-more', true)
+        .html('<h4>Learn more</h4><ul><li>' + learnMore1ById[id] + '</li></ul>');
+      if ( learnMore2ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore2ById[id]);
+      }
+      if ( learnMore3ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore3ById[id]);
+      }
+      if ( learnMore4ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore4ById[id]);
+      }
+      if ( learnMore5ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore5ById[id]);
+      }
+      if ( learnMore6ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore6ById[id]);
+      }
+      if ( learnMore7ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore7ById[id]);
+      }
+      if ( learnMore8ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore8ById[id]);
+      }
+      if ( learnMore9ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore9ById[id]);
+      }
+      if ( learnMore10ById[id] !== "" ) {
+        d3.select('.sidebar-block-wrapper > .learn-more > ul')
+          .append('li')
+          .html(learnMore10ById[id]);
+      }
     }
 
 
