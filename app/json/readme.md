@@ -9,7 +9,7 @@ In terminal, run:
 The Makefile requires the following already be installed:
 • GDAL
 • Node.js
-• TopoJSON
+• TopoJSON v1.6.27
 
 For basic instructions, see http://bost.ocks.org/mike/map/#installing-tools
 
@@ -48,8 +48,7 @@ PNG - Papua New Guinea
 PER - Peru
 SEN - Senegal
 ZAF - South Africa
-SDS? - South Sudan????
-SSD? - South Sudan????
+SDS - South Sudan
 ESP - Spain
 TZA - United Republic of Tanzania
 UGA - Uganda
