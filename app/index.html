@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <title>Resource rights | Oxfam America</title>
@@ -10,7 +11,7 @@
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="cleartype" content="on" />
-  <link rel="stylesheet" href="static/css/main.css" />
+  <link rel="stylesheet" href="static/css/main-min.css" />
   <link rel="stylesheet" href="static/css/modifications.css" />
 
   <!--build:css styles/ei-map.min.css-->
@@ -21,18 +22,25 @@
 
 
 <body class="theme-b">
+  <svg width="0" height="0" class="hidden">
+    <defs>
+      <g id="ox_horiz" data-name="oxfam horizontal">
+        <path class="fill-green" d="M335.42,287A127.57,127.57,0,1,1,207.85,159.42,127.57,127.57,0,0,1,335.42,287ZM157,258.38h23.28a1.35,1.35,0,0,0,1.3-1.31,26.52,26.52,0,0,1,52.45,0,1.44,1.44,0,0,0,1.38,1.31h23.19a1.3,1.3,0,0,0,1.31-1.3,52.26,52.26,0,0,0-104.22,0A1.3,1.3,0,0,0,157,258.38Zm75.84,48.43a52.24,52.24,0,0,0,27-41.9,1.3,1.3,0,0,0-1.31-1.3H235.34a1.36,1.36,0,0,0-1.31,1.3,26.51,26.51,0,0,1-52.44,0,1.32,1.32,0,0,0-1.31-1.3H157a1.31,1.31,0,0,0-1.3,1.3,52.23,52.23,0,0,0,27,41.9,52.23,52.23,0,0,0-27.17,44.53,1.3,1.3,0,0,0,1.31,1.3H180a1.31,1.31,0,0,0,1.31-1.3,26.52,26.52,0,0,1,53,0,1.3,1.3,0,0,0,1.3,1.3h23.15a1.3,1.3,0,0,0,1.3-1.3A52.22,52.22,0,0,0,232.88,306.81Z" transform="translate(-80.28 -159.42)"></path><path class="fill-green" d="M437.23,300.81c0,7.67-7.87,10.27-12.48,10.27s-12.49-2.6-12.49-10.27V259c0-7.68,7.87-10.27,12.49-10.27s12.48,2.6,12.48,10.27v41.81Zm-12.48-72.34c-22.3.06-32.66,15.7-32.66,29v44.91c0,13.29,10.36,28.92,32.66,29s32.65-15.7,32.65-29V257.44C457.4,244.17,447,228.53,424.75,228.47Z" transform="translate(-80.28 -159.42)"></path><polygon class="fill-green" points="487.57 170.08 487.57 130.98 517.7 130.98 517.7 110.94 487.72 110.94 487.72 91.04 522.63 91.04 522.63 70.87 467.45 70.87 467.45 170.08 487.57 170.08"></polygon><path class="fill-green" d="M637.08,261.25l8.06,31.22H628.87ZM654.7,329.5h20.11l-26.3-99.21H625L599.09,329.5H619.3l4.61-17.57h26.26Z" transform="translate(-80.28 -159.42)"></path><polygon class="fill-green" points="431.47 120.41 457.15 70.87 433.85 70.87 419.8 99.76 405.74 70.87 382.44 70.87 408.13 120.41 382.3 170.08 405.87 170.08 419.8 141.26 433.72 170.08 457.29 170.08 431.47 120.41"></polygon><polygon class="fill-green" points="659.4 70.87 641.65 109.04 623.65 70.87 602.99 70.87 602.99 170.09 622.71 170.09 622.71 113.65 635.38 140.03 647.96 140.03 660.63 113.73 660.63 170.09 680.35 170.09 680.35 70.87 659.4 70.87"></polygon>
+      </g>
+    </defs>
+  </svg>
 
   <!-- PAGE HEADER -->
   <header id="PageHeader" class="wrapper">
     <a href="#PrimaryNav" class="skip-link skip-link-top-nav"></a>
-    <a href="http://oxfamamerica.org" id="Logo" class="logo"><img src="static/img/logo.png" alt="Oxfam America" title="Oxfam America" /></a>
-    <p id="HeaderStrapline" class="hidden-phone">Working together to end poverty and injustice</p>
+    <a href="/" id="Logo" class="logo"><svg class="ox-horiz" viewBox="0 0 680.35 255.13"><title>Oxfam</title><use xlink:href="#ox_horiz"></use></svg></a>
+    <p id="HeaderStrapline" class="hidden-phone">The power of people against poverty</p>
     <nav id="NavContainer">
       <!-- SEARCH FORM -->
-      <form id="Search" method="GET" action="http://policy-practice.oxfamamerica.org/search">
+      <form id="Search" method="GET" action="/search">
         <div class="cmpnt-search">
           <label for="siteSearch">Search</label>
-          <input type="search" value="" id="siteSearch" name="q" placeholder="Search" />
+          <input type="search" value="" id="siteSearch" name="q" placeholder="Search">
           <button type="submit" title="Search">Go</button>
         </div>
       </form>
@@ -40,49 +48,27 @@
       <div class="primary-nav-wrap">
         <!-- PRIMARY NAVIGATION -->
         <ul id="PrimaryNav" class="is_extended">
-          <li>
-            <a href="http://oxfamamerica.org/work/" title="Our work" class="current">Our work</a>
-          </li>
-          <li>
-            <a href="http://oxfamamerica.org/publications/" title="Publications" class="">Publications</a>
-          </li>
-          <li>
-            <a href="http://oxfamamerica.org/people/" title="Our people" class="">Our people</a>
-          </li>
-          <li>
-            <a href="http://politicsofpoverty.oxfamamerica.org">Blog</a>
-          </li>
+          <li><a href="/work/" title="Our work" class="
+current
+">Our work</a></li>
+          <li><a href="/publications/" title="Publications" class="">Publications</a></li>
+          <li><a href="/people/" title="Our people" class="">Our people</a></li>
+          <li><a href="http://politicsofpoverty.oxfamamerica.org">Blog</a></li>
         </ul>
         <!-- END -->
       </div>
       <!-- SECONDARY NAVIGATION -->
       <ul id="SecondaryNav" class="hidden-phone hidden-tablet">
-        <li>
-          <a href="http://www.oxfamamerica.org/" title="Oxfam America Website">Oxfam America</a>
-        </li>
-        <li>
-          <a class="current" href="http://policy-practice.oxfamamerica.org" title="Oxfam America Policy &amp; Practice Website">Policy &amp; Practice</a>
-        </li>
-        <li>
-          <a href="http://www.oxfamamericaunwrapped.com" title="Shop Oxfam America Unwrapped">Oxfam America Unwrapped</a>
-        </li>
+        <li><a href="http://www.oxfamamerica.org/" title="Oxfam America Website">Oxfam America</a></li>
+        <li><a class="current" href="/" title="Oxfam America Policy &amp; Practice Website">Policy &amp; Practice</a></li>
+        <li><a href="http://www.oxfamgifts.com" title="Shop Oxfam Gifts">Oxfam Gifts</a></li>
       </ul>
       <ul id="TertiaryNav" class="hidden-phone hidden-tablet">
-        <li>
-          <a href="http://www.oxfamamerica.org/press/" title="Press">Press</a>
-        </li>
-        <li>
-          <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america">About us</a>
-        </li>
-        <li>
-          <a href="http://www.oxfamamerica.org/donate/" title="Donate">Donate</a>
-        </li>
-        <li>
-          <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america/contact-us/" title="Contact us">Contact us</a>
-        </li>
-        <li>
-          <a href="http://www.oxfamamerica.org/donate/help/" title="Help">Help</a>
-        </li>
+        <li><a href="http://www.oxfamamerica.org/press/" title="Press">Press</a></li>
+        <li><a href="http://www.oxfamamerica.org/explore/about-oxfam">About us</a></li>
+        <li><a href="http://www.oxfamamerica.org/donate/" title="Donate">Donate</a></li>
+        <li><a href="http://www.oxfamamerica.org/explore/about-oxfam/contact-us/" title="Contact us">Contact us</a></li>
+        <li><a href="http://www.oxfamamerica.org/donate/help/" title="Help">Help</a></li>
       </ul>
       <!-- END -->
     </nav>
@@ -98,14 +84,15 @@
       <a href="http://policy-practice.oxfamamerica.org/work">Work</a>
     </li>
     <li>
-      <a href="/work/resource-rights/" title="Resource rights">Resource rights</a>
+      <a href="http://policy-practice.oxfamamerica.org/work/resource-rights/" title="Resource rights">Resource rights</a>
     </li>
   </ul>
   <!-- END BREADCRUMBS -->
   <!-- DJANGO MESSAGES -->
   <!-- END DJANGO MESSAGES -->
   <!-- PAGE CONTENT -->
-  <div class="wrapper" data-slidenav-button="Sections"> <!--***was class="wrapper layout-content"-->
+  <div class="wrapper" data-slidenav-button="Sections">
+    <!--***was class="wrapper layout-content"-->
     <div class="main">
 
 
@@ -119,9 +106,11 @@
       <article class="cmpnt cmpnt-border cmpnt-full-article interactive">
         <div id="interactive">
           <div class="intro">
-      			<h1>Global Extractive Industries Program</h1>
-      			<p>Oil, gas, and mining projects generate billions of dollars in the developing world, yet very little of this wealth benefits the communities where these resources are found. They often suffer from displacement, pollution, and a lack of meaningful voice in decisions about whether or not to extract.  Oxfam has worked for more than 15 years to help people defend their rights to participate in decisions about natural resources and unlock resource revenues for development that meets their needs.  Today we work with partners in more than 30 countries to overcome the legacies of poverty and powerlessness that oil, gas, and mining projects often exacerbate.</p>
-      		</div>
+            <h1>Global Extractive Industries Program</h1>
+            <p>Oil, gas, and mining projects generate billions of dollars in the developing world, yet very little of this wealth benefits the communities where these resources are found. They often suffer from displacement, pollution, and a lack of meaningful
+              voice in decisions about whether or not to extract. Oxfam has worked for more than 15 years to help people defend their rights to participate in decisions about natural resources and unlock resource revenues for development that meets their
+              needs. Today we work with partners in more than 30 countries to overcome the legacies of poverty and powerlessness that oil, gas, and mining projects often exacerbate.</p>
+          </div>
           <div class="map-container wrapper">
 
             <svg id="map"></svg>
@@ -134,60 +123,76 @@
 
           <div class="lower-content">
             <div class="country-wrapper offscreen">
-            <h2 class="country-name">
+              <h2 class="country-name">
               <img class="country-flag" src="" alt="">
               <span></span>
             </h2>
-            <a class="list-view-btn head-nav-btn" href="javascript:;">List view</a>
-            <a class="next-country-btn  head-nav-btn" href="javascript:;">Next country</a>
+              <a class="list-view-btn head-nav-btn" href="javascript:;">List view</a>
+              <a class="next-country-btn  head-nav-btn" href="javascript:;">Next country</a>
 
-            <div class="country-narrative">
-              <div class="stakes">
-                <h3>What's at stake</h3>
-                <div class="stakes-content"></div>
+              <div class="country-narrative">
+                <div class="stakes">
+                  <h3>What's at stake</h3>
+                  <div class="stakes-content"></div>
+                </div>
+
+                <figure class="cmpnt-full-article-main-img">
+                  <img class="country-photo" src="" alt="">
+                  <figcaption></figcaption>
+                </figure>
+
+                <div class="doing">
+                  <h3>What we are doing</h3>
+                  <div class="doing-content"></div>
+                </div>
               </div>
 
-              <figure class="cmpnt-full-article-main-img">
-                <img class="country-photo" src="" alt="">
-                <figcaption></figcaption>
-              </figure>
-
-              <div class="doing">
-                <h3>What we are doing</h3>
-                <div class="doing-content"></div>
+              <div class="country-sidebar">
+                <div class="sidebar-block-wrapper"></div>
+                <div class="sidebar-share">
+                  <div class="cmpnt-full-article-share">
+                    <div class="cmpnt-social-icons">
+                      <section>
+                        <div class="social-share" id="social-sharrre">
+                          <div id="twitter" class="twitter-count sharrre" data-text="Global Extractive Industries Program" data-title="Tweet">
+                            <div class="box"><a class="count" href="#">10</a><a class="share" href="#">Tweet</a></div>
+                          </div>
+                          <div id="facebook" class="facebook-count sharrre" data-text="Like this on Facebook" data-title="Like">
+                            <div class="box"><a class="count" href="#">4</a><a class="share" href="#">Like</a></div>
+                          </div>
+                          <div id="googleplus" class="googleplus-count sharrre" data-text="+1 this on Google+" data-title="+1">
+                            <div class="box"><a class="count" href="#">0</a><a class="share" href="#">+1</a></div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="country-sidebar">
-              <div class="sidebar-block-wrapper"></div>
-              <div class="sidebar-share">
-                <div class="cmpnt-full-article-share"><div class="cmpnt-social-icons"><section><div class="social-share" id="social-sharrre"><div id="twitter" class="twitter-count sharrre" data-text="Global Extractive Industries Program" data-title="Tweet"><div class="box"><a class="count" href="#">10</a><a class="share" href="#">Tweet</a></div></div><div id="facebook" class="facebook-count sharrre" data-text="Like this on Facebook" data-title="Like"><div class="box"><a class="count" href="#">4</a><a class="share" href="#">Like</a></div></div><div id="googleplus" class="googleplus-count sharrre" data-text="+1 this on Google+" data-title="+1"><div class="box"><a class="count" href="#">0</a><a class="share" href="#">+1</a></div></div></div></section></div></div>
-              </div>
-            </div>
-          </div>
             <div class="table-wrapper"></div>
           </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
 
 
 
-        <!--build:js scripts/main.min.js -->
-        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="bower_components/topojson/topojson.js"></script>
-        <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
-        <script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
-        <script type="text/javascript" src="bower_components/Qurl/qurl.js"></script>
-        <script type="text/javascript" src="bower_components/sharrre/jquery.sharrre.min.js"></script>
-        <script type="text/javascript" src="scripts/queue.v1.min.js"></script>
-        <script type="text/javascript" src="scripts/ei-map.js"></script>
-        <!-- endbuild -->
+      <!--build:js scripts/main.min.js -->
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="bower_components/topojson/topojson.js"></script>
+      <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+      <script type="text/javascript" src="bower_components/fastclick/lib/fastclick.js"></script>
+      <script type="text/javascript" src="bower_components/Qurl/qurl.js"></script>
+      <script type="text/javascript" src="bower_components/sharrre/jquery.sharrre.min.js"></script>
+      <script type="text/javascript" src="scripts/queue.v1.min.js"></script>
+      <script type="text/javascript" src="scripts/ei-map.js"></script>
+      <!-- endbuild -->
 
 
 
 
-        <!-- **************************************
+      <!-- **************************************
         END EI-MAP CONTENT
         ************************************** -->
 
@@ -195,36 +200,36 @@
 
 
 
-  <footer class="cmpnt-full-article-footer">
-  </footer>
+      <footer class="cmpnt-full-article-footer">
+      </footer>
 
-</article>
-<!-- BEGIN RELATED STORIES COMPONENT -->
-</div>
-</div>
-<!-- END CONTENT -->
-<!-- PAGE FOOTER -->
-<footer id="PageFooter">
-  <div class="wrapper">
-    <!-- DONATION FORM -->
-    <section id="FooterDonate">
-      <div class="footer-donate-wrap">
-        <h2>Donate now</h2>
-        <form>
-          <ol class="donation-values">
-            <li>
-              <input type="radio" name="v" id="DonateValueLow" value="35">
-              <label for="DonateValueLow">$35</label>
-            </li>
-            <li>
-              <input type="radio" name="v" id="DonateValueMiddle" value="100">
-              <label for="DonateValueMiddle">$100</label>
-            </li>
-            <li>
-              <input type="radio" name="v" id="DonateValueHigh" value="500">
-              <label for="DonateValueHigh">$500</label>
-            </li>
-            <span class="donation-end-wrap">
+      </article>
+      <!-- BEGIN RELATED STORIES COMPONENT -->
+    </div>
+  </div>
+  <!-- END CONTENT -->
+  <!-- PAGE FOOTER -->
+  <footer id="PageFooter">
+    <div class="wrapper">
+      <!-- DONATION FORM -->
+      <section id="FooterDonate">
+        <div class="footer-donate-wrap">
+          <h2>Donate now</h2>
+          <form>
+            <ol class="donation-values">
+              <li>
+                <input type="radio" name="v" id="DonateValueLow" value="35">
+                <label for="DonateValueLow">$35</label>
+              </li>
+              <li>
+                <input type="radio" name="v" id="DonateValueMiddle" value="100">
+                <label for="DonateValueMiddle">$100</label>
+              </li>
+              <li>
+                <input type="radio" name="v" id="DonateValueHigh" value="500">
+                <label for="DonateValueHigh">$500</label>
+              </li>
+              <span class="donation-end-wrap">
               <li class="donation-value-custom">
                 <input type="radio" name="v" id="DonateValueCustom" value="-1">
                 <label for="DonateValueCustom">$</label>
@@ -234,140 +239,114 @@
                 <button type="submit" class="cmpnt-submit-pointed">Donate</button>
               </li>
             </span>
-          </ol>
-        </form>
-        <ul class="donate-icons hidden-phone">
-          <li class="sprite-action"></li>
-          <li class="sprite-charity"></li>
-          <li class="sprite-bbb"></li>
-          <li class="sprite-aminus"></li>
-        </ul>
-        <p>Make sure your gift to Oxfam America goes directly to where it's most needed, without delay, with a secure online donation.</p>
+            </ol>
+          </form>
+          <ul class="donate-icons hidden-phone">
+            <li class="sprite-action"></li>
+            <li class="sprite-charity"></li>
+            <li class="sprite-bbb"></li>
+            <li class="sprite-aminus"></li>
+          </ul>
+          <p>Make sure your gift to Oxfam America goes directly to where it's most needed, without delay, with a secure online donation.</p>
 
-        <p>(Looking to make a monthly donation, fundraise for Oxfam, or give some other way? <a href="http://oxfamamerica.org/donate" class="white-link">Visit our donate page</a>.)</p>
-      </div>
-      <!-- END -->
-      <nav class="footer-nav alt-links hidden-phone">
-        <div class="col">
-          <h3>
+          <p>(Looking to make a monthly donation, fundraise for Oxfam, or give some other way? <a href="http://oxfamamerica.org/donate" class="white-link">Visit our donate page</a>.)</p>
+        </div>
+        <!-- END -->
+        <nav class="footer-nav alt-links hidden-phone">
+          <div class="col">
+            <h3>
             <a href="http://policy-practice.oxfamamerica.org">Policy &amp; Practice</a>
           </h3>
-          <ul>
-            <li>
-              <a href="http://policy-practice.oxfamamerica.org/work">Our work</a>
-            </li>
-            <li>
-              <a href="http://policy-practice.oxfamamerica.org/publications">Publications</a>
-            </li>
-            <li>
-              <a href="http://policy-practice.oxfamamerica.org/people">Our people</a>
-            </li>
-            <li>
-              <a href="http://politicsofpoverty.oxfamamerica.org">Blog</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col">
-          <h3>
+            <ul>
+              <li>
+                <a href="http://policy-practice.oxfamamerica.org/work">Our work</a>
+              </li>
+              <li>
+                <a href="http://policy-practice.oxfamamerica.org/publications">Publications</a>
+              </li>
+              <li>
+                <a href="http://policy-practice.oxfamamerica.org/people">Our people</a>
+              </li>
+              <li>
+                <a href="http://politicsofpoverty.oxfamamerica.org">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>
             <a href="http://www.oxfamamerica.org">Oxfam America</a>
           </h3>
-          <ul>
-            <li>
-              <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america">Inside Oxfam America</a>
-            </li>
-            <li>
-              <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america/careers/">Careers</a>
-            </li>
-            <li>
-              <a href="http://www.oxfamamerica.org/donate/">Make a donation</a>
-            </li>
-          </ul>
-        </div>
+            <ul>
+              <li>
+                <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america">Inside Oxfam America</a>
+              </li>
+              <li>
+                <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america/careers/">Careers</a>
+              </li>
+              <li>
+                <a href="http://www.oxfamamerica.org/donate/">Make a donation</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+      <!-- CONTACT INFORMATION -->
+      <section class="cmpnt footer-contact" itemscope="" itemtype="http://schema.org/NGO">
+        <ul class="footer-cols">
+          <li class="phone-email hidden-phone">
+            <a href="tel:08007769326"><i class="icon-phone"></i> <span itemprop="telephone">(800) 776-9326</span></a>
+            <a href="mailto:info@oxfamamerica.org"><i class="icon-mail"></i> <span itemprop="email">info@oxfamamerica.org</span></a>
+          </li>
+          <li class="hidden-phone">
+            <h4>Boston, MA</h4>
+
+            <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">226 Causeway Street, 5th Floor,</span> <span itemprop="addressLocality">Boston</span>, <span itemprop="addressRegion">MA</span> <span itemprop="postalCode">02114</span></p>
+          </li>
+          <li class="hidden-phone">
+            <h4>Washington, DC</h4>
+            <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">1101 17th St NW, Suite 1300,</span> <span itemprop="addressLocality">Washington</span>, <span itemprop="addressRegion">DC</span> <span itemprop="postalCode">20036-4710</span></p>
+          </li>
+          <li class="social-col">
+            <ul class="social-presence">
+              <li><a href="https://www.facebook.com/oxfamamerica" class="fb" title="Like us on Facebook"><i class="icon-facebook"></i></a></li>
+              <li><a href="https://www.twitter.com/oxfamamerica" class="tw" title="Follow us on Twitter"><i class="icon-twitter"></i></a></li>
+              <li><a href="http://www.pinterest.com/oxfamamerica" class="pn" title="Follow us on Pinterest"><i class="icon-pinterest"></i></a></li>
+              <li><a href="https://plus.google.com/107126015288068120526" class="gp" title="Add us on Google Plus"><i class="icon-google-plus"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <!-- END -->
+      <!-- SECONDARY FOOTER NAV -->
+      <nav class="cmpnt footer-secondary-nav">
+        <ul>
+          <li><a href="http://www.oxfamamerica.org/explore/about-oxfam/" title="About us">About Us</a></li>
+          <li><a href="http://politicsofpoverty.oxfamamerica.org" title="Read our blog">Blog</a></li>
+          <li><a href="http://www.oxfamamerica.org/press/" title="Press">Press</a></li>
+          <li><a href="http://www.oxfamamerica.org/careers/" title="Career">Careers</a></li>
+          <li><a href="http://www.oxfamamerica.org/explore/about-oxfam/contact-us/" title="Contact us">Contact us</a></li>
+        </ul>
       </nav>
-    </section>
-    <!-- CONTACT INFORMATION -->
-    <section class="cmpnt footer-contact">
-      <ul class="footer-cols">
-        <li class="phone-email hidden-phone">
-          <a href="tel:08007769326"><i class="icon-phone"></i> (800) 776-9326</a>
-          <a href="mailto:info@oxfamamerica.org"><i class="icon-mail"></i> info@oxfamamerica.org</a>
-        </li>
-        <li class="hidden-phone">
-          <h4>Boston, MA</h4>
-          <p>226 Causeway Street, 5th Floor, Boston, MA 02114</p>
-        </li>
-        <li class="hidden-phone">
-          <h4>Washington, DC</h4>
-          <p>1100 15th St NW, Suite 600, Washington, DC 20005</p>
-        </li>
-        <li class="social-col">
-          <ul class="social-presence">
-            <li>
-              <a href="https://www.facebook.com/oxfamamerica" class="fb" title="Like us on Facebook"><i class="icon-facebook"></i></a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com/oxfamamerica" class="tw" title="Follow us on Twitter"><i class="icon-twitter"></i></a>
-            </li>
-            <li>
-              <a href="http://www.pinterest.com/oxfamamerica" class="pn" title="Follow us on Pinterest"><i class="icon-pinterest"></i></a>
-            </li>
-            <li>
-              <a href="https://plus.google.com/107126015288068120526" class="gp" title="Add us on Google Plus"><i class="icon-google-plus"></i></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <!-- END -->
-    <!-- SECONDARY FOOTER NAV -->
-    <nav class="cmpnt footer-secondary-nav">
-      <ul>
-        <li>
-          <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america/careers/" title="Career">Careers</a>
-        </li>
-        <li>
-          <a href="http://www.oxfamamerica.org/explore/inside-oxfam-america/contact/" title="Contact us">Contact us</a>
-        </li>
-        <li>
-          <a href="http://politicsofpoverty.oxfamamerica.org" title="Read our blog">Blog</a>
-        </li>
-        <li>
-          <a href="https://secure2.oxfamamerica.org/page/content/temp-account-page/" title="Log in to your account">My account</a>
-        </li>
-        <li>
-          <a href="http://policy-practice.oxfamamerica.org/press/" title="Press">Press</a>
-        </li>
-        <li>
-          <a href="http://policy-practice.oxfamamerica.org/help" title="Help">Help</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- END -->
-    <nav class="cmpnt footer-tertiary-nav hidden-desktop">
-      <ul>
-        <li>
-          <a href="http://www.oxfamamerica.org" target="_blank" title="Oxfam America">Oxfam America<i class="icon-new-tab"></i></a>
-        </li>
-        <li>
-          <a href="https://www.oxfamamericaunwrapped.com" target="_blank" title="Shop Oxfam America Unwrapped">Oxfam Unwrapped <i class="icon-new-tab"></i></a>
-        </li>
-      </ul>
-    </nav>
-    <div class="cmpnt footer-last">
-      <div class="footer-legal">
-        <p>&copy;
-          <script>
-            var date = new Date();document.write(date.getFullYear());
-          </script>Oxfam America Inc. All rights reserved.</p>
-          <p>Oxfam America is a member of Oxfam, an international confederation of 17 organizations networked together in 94 countries, as part of a global movement for change, to build a future free from the injustice of poverty.</p>
+      <!-- END -->
+      <nav class="cmpnt footer-tertiary-nav hidden-desktop">
+        <ul>
+          <li><a href="http://www.oxfamamerica.org" target="_blank" title="Oxfam America">Oxfam America<i class="icon-new-tab"></i></a></li>
+          <li><a href="https://www.oxfamamericaunwrapped.com" target="_blank" title="Shop Oxfam America Unwrapped">Oxfam Unwrapped <i class="icon-new-tab"></i></a></li>
+        </ul>
+      </nav>
+      <div class="cmpnt footer-last">
+        <div class="footer-legal">
+          <p>©
+            <script>
+              var date = new Date();
+              document.write(date.getFullYear());
+            </script>2017 Oxfam America Inc. All rights reserved.</p>
+          <p>Oxfam is a global movement of people working together to end the injustice of poverty. With 70 years of experience in more than 90 countries, Oxfam helps people save lives in disasters, build stronger futures for themselves, and hold the powerful
+            accountable.</p>
           <p>Oxfam America is a 501(c)(3) organization. Gifts are tax deductible to the full extent allowable under the law.</p>
-          <p>
-            <a href="http://policy-practice.oxfamamerica.org/privacy-legal/" title="Privacy &amp; Legal">Privacy &amp; Legal</a>
-          </p>
+          <p><a href="/privacy-legal/" title="Privacy &amp; Legal">Privacy &amp; Legal</a></p>
         </div>
-        <div class="footer-logo">
-          <img src="static/img/logo-footer.png" alt="Oxfam America" title="Oxfam America" />
-        </div>
+        <div class="footer-logo"><svg class="ox-horiz" viewBox="0 0 680.35 255.13"><title>Oxfam</title><use xlink:href="#ox_horiz"></use></svg></div>
       </div>
     </div>
   </footer>
@@ -377,7 +356,7 @@
 
 
   <!--<script data-main="static/js/main" src="static/js/require.js"></script>-->
-<!--[if lt IE 8]>
+  <!--[if lt IE 8]>
   <script src="static/js/vendor/lte-ie7.js"></script>
   <![endif]-->
   <!-- END -->
